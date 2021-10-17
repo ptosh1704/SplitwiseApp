@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "198a9aa1-2bac-4551-9bc9-01efb33a782c",
+		"name": "Splitwise",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "greetings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/greetings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"greetings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userid\":3,\n    \"name\":\"june\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/addUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"addUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addGroup",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"groupid\":102,\n    \"groupname\":\"party\",\n    \"groupmembers\":[\n          1 ,\n          2,\n          3           \n    ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/createGroup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"createGroup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addBill",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"billid\":111,\n    \"groupid\":101,\n    \"amount\":220.00,\n    \"contribution\":{\n        \"1\":  50 ,\n        \"2\":50,\n        \"3\":50\n        \n       }\n    ,\n    \"paidBy\":{\n        \"1\":150\n    }\n    \n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/addExpenses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"addExpenses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBalanceForUser",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/getBalance?username=palak&id=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getBalance"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "palak"
+						},
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
